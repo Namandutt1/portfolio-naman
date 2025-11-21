@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Art Portfolio — Home</title>
+
+  <!-- Link to external CSS (we'll add this next) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="page-home">
+
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link">
+          <span class="brand-name">MyArt</span>
+        </a>
+      </div>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="illustrations.html" class="nav-link">Illustrations</a>
+        <a href="flyers.html" class="nav-link">Flyers</a>
+        <a href="banners.html" class="nav-link">Banners</a>
+        <a href="brand-promotions.html" class="nav-link">Brand</a>
+        <a href="3d-models.html" class="nav-link">3D</a>
+        <a href="motion-graphics.html" class="nav-link">Motion</a>
+        <a href="digital-art.html" class="nav-link">Digital</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link btn-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero with big image and intro -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-left">
+        <h1 class="hero-title">A Curated World of Visual Art</h1>
+        <p class="hero-sub">Illustrations • Flyers • Banners • Brand Promotions • 3D • Motion Graphics • Digital Art</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="illustrations.html">Explore Work</a>
+          <a class="btn btn-outline" href="about.html">About Me</a>
+        </div>
+        <div class="hero-mini">
+          <div class="mini-item">
+            <strong>Projects</strong><span>120+</span>
+          </div>
+          <div class="mini-item">
+            <strong>Clients</strong><span>50+</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- sample image from your upload (local path included as example) -->
+        <div class="hero-image-wrap">
+          <img src="/mnt/data/b4ace25a32a447d796e7a479cdc65c70.jpg" alt="Featured art" class="hero-image">
+          <div class="image-tag">Featured</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Grid preview -->
+  <section class="preview">
+    <div class="container">
+      <h2 class="section-title">Featured Work</h2>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <a href="illustrations.html" class="card-link">
+            <div class="card-media" style="background-image: url('/mnt/data/b4ace25a32a447d796e7a479cdc65c70.jpg')"></div>
+            <div class="card-body">
+              <h3>Illustrations</h3>
+              <p>Editorial, character, and concept illustrations.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="3d-models.html" class="card-link">
+            <div class="card-media" style="background: linear-gradient(135deg,#7a1a1e,#4a0a0f)"></div>
+            <div class="card-body">
+              <h3>3D Models</h3>
+              <p>Scenes, products, and stylized models.</p>
+            </div>
+          </a>
+        </article>
+
+        <article class="card">
+          <a href="motion-graphics.html" class="card-link">
+            <div class="card-media" style="background: linear-gradient(135deg,#5a0e18,#111111)"></div>
+            <div class="card-body">
+              <h3>Motion Graphics</h3>
+              <p>Short loops, promos, and animated identity pieces.</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick sections links -->
+  <section class="quick-links">
+    <div class="container">
+      <a class="quick" href="flyers.html">Flyers</a>
+      <a class="quick" href="banners.html">Banners</a>
+      <a class="quick" href="brand-promotions.html">Brand Promotions</a>
+      <a class="quick" href="digital-art.html">Digital Art</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 My Art Portfolio</div>
+      <div class="socials">
+        <a href="#" aria-label="instagram">IG</a>
+        <a href="#" aria-label="behance">Behance</a>
+        <a href="#" aria-label="email">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- small inline script to add a little interaction (no JS frameworks) -->
+  <script>
+    // add "scrolled" class to header when user scrolls down
+    (function(){
+      const header = document.querySelector('.site-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 30) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      });
+    })();
+  </script>
+
+</body>
+</html>
