@@ -130,7 +130,7 @@ body.home-page {
 }
 
 .hero-section {
-  background-image: url("assets/images/imgportfolio.jpg"); 
+  background-image: url("images/imgportfolio.jpg"); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -374,3 +374,4 @@ body.home-page {
   object-fit: contain;
   display: block;
 }
+
