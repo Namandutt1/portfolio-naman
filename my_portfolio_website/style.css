@@ -1,0 +1,376 @@
+/* -------------------------------
+    GLOBAL RESET
+-------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.home-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #fff3ea; /* plain background for cards & rest */
+  font-family: 'Playfair Display', serif;
+  color: #4d0000;
+}
+
+/* ===== HERO IMAGE INSIDE BOX ===== */
+.hero-image-box {
+  width: 90%;
+  max-width: 850px;
+  margin: 40px auto 10px auto;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 0 35px rgba(77,0,0,0.35);
+  border: 2px solid #d4af37;
+  background: #f9f2ec;
+}
+
+.hero-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* -------------------------------
+    TOP NAME (PORTFOLIO TITLE)
+-------------------------------- */
+.top-name {
+  font-family: 'DM Serif Display', serif;
+  text-align: center;
+  width: 100%;
+  padding: 22px 0;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 3px;
+
+  /* fixed: use rgba for a translucent maroon overlay */
+  background: rgba(77, 0, 0, 0.12);
+  backdrop-filter: blur(6px);
+  color: #4d0000;
+}
+
+/* -------------------------------
+    NAVIGATION BAR (matches footer)
+-------------------------------- */
+.site-header {
+  width: 100%;
+  padding: 15px 0;
+  /* same soft cream translucent background as footer */
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  /* maroon accent line similar to footer */
+  border-bottom: 2px solid rgba(128, 0, 0, 0.25);
+  text-align: center;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  padding: 8px 18px;
+  font-size: 18px;
+  color: #800000; /* maroon text */
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Hover: light grey background + deeper text */
+.nav-link:hover:not(.highlight) {
+  background-color: #e6e6e6; /* grey */
+  color: #4d0000; /* deep maroon */
+}
+
+/* -------------------------------
+    MY WORK (SPECIAL BUTTON)
+-------------------------------- */
+.highlight {
+  background-color: #800000; /* maroon bg */
+  color: #f9f2ec; /* cream text */
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 24px;
+  box-shadow: 0 0 12px rgba(128, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.highlight:hover {
+  background-color: #4d0000; /* deeper maroon */
+}
+
+/* -------------------------------
+    MIDDLE HERO TEXT
+-------------------------------- */
+.hero-section {
+  /* keep hero section flexible so page flows and scroll works */
+  min-height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.hero-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #f9f2ec; /* cream on dark background */
+  text-shadow: 0px 5px 22px rgba(0, 0, 0, 0.45);
+  letter-spacing: 2px;
+}
+
+.hero-section {
+  background-image: url("assets/images/imgportfolio.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ============================
+   PREMIUM CATEGORY CARDS
+============================ */
+
+.premium-section {
+  padding: 80px 30px;
+  background: #fff3ea;
+  text-align: center;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  color: #4d0000;
+  margin-bottom: 50px;
+  text-shadow: 0 0 8px rgba(128,0,0,0.25);
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 40px;
+}
+
+/* CARD BASE DESIGN */
+.premium-card {
+  background: #f9f2ec;
+  padding: 18px;
+  border-radius: 26px; /* 22-30px range satisfied */
+  position: relative;
+  box-shadow: 0 6px 30px rgba(77, 0, 0, 0.18); /* soft maroon shadow */
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: transform 0.45s cubic-bezier(.2,.9,.2,1), box-shadow 0.3s ease;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* CARD BASE DESIGN (CLEAN + ERROR FREE) */
+.premium-card {
+  background: #f9f2ec;
+  padding: 18px;
+  border-radius: 26px;
+  position: relative;
+  overflow: hidden;
+
+  /* gradient border using border-image (no error) */
+  border: 2px solid transparent;
+  border-image: linear-gradient(135deg, #d4af37, #f9f2ec) 1;
+
+  /* shadow & animation */
+  box-shadow: 0 0 25px rgba(77, 0, 0, 0.3);
+  transition: 0.5s ease;
+}
+
+/* constant glow */
+.premium-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  box-shadow: 0 0 18px rgba(128,0,0,0.25);
+  pointer-events: none;
+}
+
+/* IMAGE */
+.card-img {
+  width: 100%;
+  border-radius: 20px;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* TITLE */
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: #4d0000;
+  margin: 10px 0 18px;
+}
+
+/* BUTTON */
+.view-btn {
+  background: #800000;
+  color: #f9f2ec;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(128,0,0,0.28);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.2s;
+}
+
+.view-btn:hover {
+  background: #4d0000;
+  box-shadow: 0 10px 30px rgba(77,0,0,0.45);
+  transform: translateY(-3px);
+}
+
+/* HOVER EFFECTS: lift, deeper shadow, inner glow, 3D tilt */
+.premium-card:hover {
+  transform: translateY(-10px) rotateX(3.5deg) rotateY(-3deg);
+  box-shadow:
+    0 18px 40px rgba(77,0,0,0.28),
+    0 6px 80px rgba(128,0,0,0.18);
+}
+
+/* inner glow on hover (keeps previous shadows) */
+.premium-card:hover::after {
+  box-shadow: inset 0 0 22px #f9f2ec, 0 0 28px rgba(77,0,0,0.32);
+}
+
+/* FLOATING GOLDEN ICONS */
+.floating-icons::before,
+.floating-icons::after {
+  content: "✦";
+  position: absolute;
+  font-size: 14px;
+  color: #d4af37;
+  text-shadow: 0 0 6px rgba(212,175,55,0.6);
+  animation: floatUp 3.2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.floating-icons::before {
+  top: 12px;
+  right: 14px;
+}
+
+.floating-icons::after {
+  bottom: 12px;
+  left: 14px;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.85; }
+  50% { transform: translateY(-8px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.85; }
+}
+
+/* tiny sparkles positioned via inline spans inside each card */
+.premium-card > span.spark {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #d4af37;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #d4af37;
+  animation: rise 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  0% { transform: translateY(40px); opacity: 0; }
+  40% { opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+
+/* selection appearance reset */
+.premium-card::selection { background: none; }
+/* -------------------------------
+    FOOTER
+-------------------------------- */
+.site-footer {
+  width: 100%;
+  padding: 18px 0;
+  background-color: rgba(255, 255, 255, 0.85); /* soft cream blur bg */
+  backdrop-filter: blur(5px);
+  border-top: 2px solid rgba(128, 0, 0, 0.25); /* soft maroon line */
+  text-align: center;
+}
+
+/* ----------- QUOTE (NO BG, NO UNDERLINE) ------------ */
+.premium-quote {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.premium-quote .quote-text {
+  font-family: "Playfair Display", serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4d0000; /* deep maroon */
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* remove pseudo-elements for quote */
+.premium-quote::before,
+.premium-quote .quote-text::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ----------- FOOTER LINKS (DARKER BG) ------------ */
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+.footer-link {
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  padding: 8px 16px;
+  font-size: 15px;
+  color: #f9f2ec;              /* cream text */
+  background-color: #800000;   /* maroon bg */
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover: deeper maroon */
+.footer-link:hover {
+  background-color: #4d0000;
+  color: #fff3ea;
+}
+
+/* ----------- ICONS (IMAGE LOGOS) ------------ */
+.footer-icon img {
+  width: 18px;     /* small, clean */
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
